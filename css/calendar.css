@@ -1,0 +1,39 @@
+table{
+    border-spacing: 0px;
+    border-collapse: separate;
+    width: 100%;
+    height: 80vh;
+    font-family: 'verdana';
+    font-size: 1.7vw;
+}
+tr{
+    padding: 0px;
+    height: 12.5%;
+}
+th{
+    text-align: center;
+    background-color: gray;
+    color: white;
+    height: 12.5%;
+}
+.day{
+    background-color: white;
+    color: grey;
+    border: solid 1px grey;
+    text-align: center;
+    min-width: 50px;
+    width: 12.5%;
+}
+.nonWorkingDay
+{
+    background-color: lightgray;
+}
+.appointmentInfo{
+    width: 600px;   
+}
+.clicable{
+    cursor: pointer;
+}
+.w3-dropdown-hover:first-child, .w3-dropdown-click:hover {
+    color: #000;
+}

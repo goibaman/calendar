@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-framework="javascript">
+    <head>
+        <meta charset="utf-8">
+        <title>Calendar App</title>
+                
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="css/calendar.css">
+    </head>
+    <body>
+        <div class="w3-container w3-grey w3-padding-16">
+            <div class="w3-row w3-padding-16">
+                <div class="w3-col s2 m2 l2"> <button class="w3-button w3-circle w3-dark-grey w3-left w3-xlarge" onClick="changeMonth(-1);"><i class="fas fa-arrow-left w3-text-white"></i></button></div>
+                <div class="w3-col s8 m8 l8 title w3-text-white w3-xxlarge w3-center">Month</div>
+                <div class="w3-col s2 m2 l2"> <button class="w3-button w3-circle w3-dark-grey w3-right w3-xlarge" onClick="changeMonth(1);"><i class="fas fa-arrow-right w3-text-white"></i></button></div>
+            </div>
+            <table id="calendar">
+                <tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>
+                                <tr id="00"><td id="00_00" class="day nonWorkingDay"></td><td id="00_01" class="day"></td><td id="00_02" class="day"></td><td id="00_03" class="day"></td><td id="00_04" class="day"></td><td id="00_05" class="day"></td><td id="00_06" class="day nonWorkingDay"></td></tr>
+                                <tr id="01"><td id="01_00" class="day nonWorkingDay"></td><td id="01_01" class="day"></td><td id="01_02" class="day"></td><td id="01_03" class="day"></td><td id="01_04" class="day"></td><td id="01_05" class="day"></td><td id="01_06" class="day nonWorkingDay"></td></tr>
+                                <tr id="02"><td id="02_00" class="day nonWorkingDay"></td><td id="02_01" class="day"></td><td id="02_02" class="day"></td><td id="02_03" class="day"></td><td id="02_04" class="day"></td><td id="02_05" class="day"></td><td id="02_06" class="day nonWorkingDay"></td></tr>
+                                <tr id="03"><td id="03_00" class="day nonWorkingDay"></td><td id="03_01" class="day"></td><td id="03_02" class="day"></td><td id="03_03" class="day"></td><td id="03_04" class="day"></td><td id="03_05" class="day"></td><td id="03_06" class="day nonWorkingDay"></td></tr>
+                                <tr id="04"><td id="04_00" class="day nonWorkingDay"></td><td id="04_01" class="day"></td><td id="04_02" class="day"></td><td id="04_03" class="day"></td><td id="04_04" class="day"></td><td id="04_05" class="day"></td><td id="04_06" class="day nonWorkingDay"></td></tr>
+                                <tr id="05"><td id="05_00" class="day nonWorkingDay"></td><td id="05_01" class="day"></td><td id="05_02" class="day"></td><td id="05_03" class="day"></td><td id="05_04" class="day"></td><td id="05_05" class="day"></td><td id="05_06" class="day nonWorkingDay"></td></tr>
+            </table>
+        </div>
+        
+        <!-- Appointment Modal Window -->
+        <div id="appointmentModal" class="w3-modal">
+            <div class="w3-modal-content">
+                <header class="w3-container w3-teal"> 
+                    <span onClick="onShowModal(null, false);" class="w3-button w3-display-topright w3-xlarge"><i class="far fa-times-circle"></i></span>
+                    <h3 id="appointmentModal_title">Modal Header</h3>
+                </header>
+                <div class="w3-container w3-padding-32">                    
+                    <label>Title</label>
+                        <input class="w3-input w3-border" id="appoitmentTitle" name="appoitmentTitle" type="text" pattern=".{5,30}"></p>
+                        <label>Description</label>
+                        <input class="w3-input w3-border" id="appoitmentDescription" name="appoitmentDescription" type="text" pattern=".{0}|.{5,255}">
+                        <input class="w3-input w3-border" id="appointmentID" name="appointmentID" type="hidden">
+                </div>
+                <footer class="w3-container w3-teal w3-right-align">
+                    <div id="modalError" class="w3-panel w3-red w3-left-align ">
+                        <h3>Validation</h3>
+                        <p id="modalErrorDescription"></p>
+                    </div> 
+                    <button class="w3-button w3-hover-black w3-xlarge" onClick="onSave();"><i class="far fa-check-circle"></i> Save</button>
+                    <button class="w3-button w3-hover-black w3-xlarge" onClick="onShowModal(null, false);"><i class="far fa-times-circle"></i> Close</button>
+                </footer>
+            </div>
+        </div>
+    
+        <script src="js/calendar.js"></script>
+    </body>
+</html>
